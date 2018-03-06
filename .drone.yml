@@ -1,6 +1,6 @@
 # Test
 pipeline:
     build:
-        image: node
+        image: alpine
         commands:
-        - npm install
+        - echo "It Worked!"
