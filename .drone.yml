@@ -1,4 +1,9 @@
 # Test
+clone:
+  git:
+    image: plugins/git
+    depth: 1
+
 pipeline:
     build:
         image: alpine
@@ -10,6 +15,8 @@ pipeline:
         files:
         - test-file.txt
         draft: true
+        when:
+            event: tag
         checksum:
         - md5
         - sha256
