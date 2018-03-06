@@ -3,9 +3,13 @@ pipeline:
     build:
         image: alpine
         commands:
-        - echo "It Worked!"
         - echo "test-file" > test-file.txt
     deploy:
-        image: alpine
-        commands:
-        - ls
+        image: plugins/github-release
+        secrets: [ github_token ]
+        files:
+        - test-file.txt
+        draft: true
+        checksum:
+        - md5
+        - sha256
