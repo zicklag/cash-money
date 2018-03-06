@@ -4,3 +4,7 @@ pipeline:
         image: alpine
         commands:
         - echo "It Worked!"
+    deploy:
+        image: alpine
+        commands:
+        - ls
