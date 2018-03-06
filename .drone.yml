@@ -4,6 +4,7 @@ pipeline:
         image: alpine
         commands:
         - echo "It Worked!"
+        - echo "test-file" > test-file.txt
     deploy:
         image: alpine
         commands:
