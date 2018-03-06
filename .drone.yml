@@ -9,11 +9,13 @@ pipeline:
         image: alpine
         commands:
         - echo "test-file" > test-file.txt
+        - echo "file2" > file2.txt
     deploy:
         image: plugins/github-release
         secrets: [ github_token ]
         files:
         - test-file.txt
+        - file2.txt
         draft: true
         when:
             event: tag
